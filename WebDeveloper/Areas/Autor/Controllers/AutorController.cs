@@ -46,7 +46,7 @@ namespace WebDeveloper.Areas.Autor.Controllers
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [OutputCache(Duration = 0)]
-        public ActionResult Edit(WebDeveloper.Model.Autor autor)
+        public ActionResult Editar(WebDeveloper.Model.Autor autor)
         {
             if (!ModelState.IsValid) return PartialView("_Editar", autor);
             _repositorioAutor.Actualizar(autor);
@@ -57,15 +57,15 @@ namespace WebDeveloper.Areas.Autor.Controllers
             if (_autor == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             return PartialView("_Detalles", _autor);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+       
+
         public ActionResult Crear() {
             return PartialView("_Crear");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(WebDeveloper.Model.Autor autor)
+        public ActionResult Crear(WebDeveloper.Model.Autor autor)
         {
             if (!ModelState.IsValid) return PartialView("_Create", autor);
             _repositorioAutor.Agregar(autor);            

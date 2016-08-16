@@ -22,15 +22,15 @@
                 @Html.DisplayFor(modelItem => item.Nombres)
             </td>
             <td>
-                <a href="#" onclick="ObtenerModal('@Url.Action("Editar",new { area="Autor", id=@item.Id })'); return false;"
+                <a href="#" onclick="getModal('@Url.Action("Editar",new { area="Autor", id=@item.Id })'); return false;"
                    data-toggle="modal" data-target="#modal-container"
                    class="btn btn-success btn-sm">
                     <span class="glyphicon glyphicon-edit"></span> Editar
                 </a>
-                <a href="#" onclick="ObtenerModal('@Url.Action("Detalles",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-container">
+                <a href="#" onclick="getModal('@Url.Action("Detalles",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-container">
                     <span class="glyphicon glyphicon-list"></span> Detalles
                 </a>
-                <a href="#" onclick="ObtenerModal('@Url.Action("Borrar",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-container">
+                <a href="#" onclick="getModal('@Url.Action("Borrar",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-container">
                     <span class="glyphicon glyphicon-remove"></span> Borrar
                 </a>
             </td>

@@ -4,7 +4,7 @@
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/jqueryval")
 
-@using (Ajax.BeginForm("Edit", new { Controller = "Personal", Area = "Personal" },
+@using (Ajax.BeginForm("Editar", new { Controller = "Autor", Area = "Autor" },
                                     new AjaxOptions
                                     {
                                         HttpMethod = "Post",
@@ -13,7 +13,7 @@
                                         OnSuccess = "closeModal"
                                     }))
 {
-    {
+
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">

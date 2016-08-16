@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebDeveloper.Model.DTO.AutorDTO>
+
+@*<label id="personalCount"></label>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                <a href="#" onclick="ObtenerModal('@Url.Action("Editar",new { area="Autor", id=@item.Id })'); return false;"
+                   data-toggle="modal" data-target="#modal-container"
+                   class="btn btn-success btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span> Editar
+                </a>
+                <a href="#" onclick="ObtenerModal('@Url.Action("Detalles",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-container">
+                    <span class="glyphicon glyphicon-list"></span> Detalles
+                </a>
+                <a href="#" onclick="ObtenerModal('@Url.Action("Borrar",new { area="Autor", id=@item.Id })'); return false;" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-container">
+                    <span class="glyphicon glyphicon-remove"></span> Borrar
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+@CustomHelpers.ObtenerModal()
+
+
